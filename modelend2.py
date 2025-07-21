@@ -680,12 +680,12 @@ class KANLinear(nn.Module):
         return (
                     regularize_activation * regularization_loss_activation + regularize_entropy * regularization_loss_entropy)
 
-class DiskNet(nn.Module):
+class HGPN(nn.Module):
 
     def __init__(self, args, adj):
-        super(DiskNet, self).__init__()
+        super(HGPN, self).__init__()
         self.args = args
-        self.model_args = args['DiskNet']
+        self.model_args = args['HGPN']
 
         self.adj = torch.from_numpy(adj).float().to(args.device)
         print(f"adj shape: {adj.shape}")
