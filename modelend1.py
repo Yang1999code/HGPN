@@ -849,7 +849,7 @@ class HGPN(nn.Module):
     def __init__(self, args, adj):
         super(HGPN, self).__init__()
         self.args = args
-        self.model_args = args['DiskNet']
+        self.model_args = args['HGPN']
 
         self.adj = torch.from_numpy(adj).float().to(args.device)
         self.norm_lap = normalized_laplacian(self.adj)
