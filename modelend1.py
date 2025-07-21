@@ -844,10 +844,10 @@ class KANLinear(nn.Module):
 
 
 
-class DiskNet(nn.Module):
+class HGPN(nn.Module):
 
     def __init__(self, args, adj):
-        super(DiskNet, self).__init__()
+        super(HGPN, self).__init__()
         self.args = args
         self.model_args = args['DiskNet']
 
