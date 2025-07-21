@@ -4,7 +4,7 @@ import warnings;
 warnings.filterwarnings('ignore')
 
 # 替换为新的模型文件
-from modeliTransF1 import DiskNet
+from modeliTransF1 import HGPN
 from data import Dataset
 from simluator import NetworkSimulator
 from utils import *
@@ -45,7 +45,7 @@ def main():
 
     # Model
     print("Initializing modeliTransF...")
-    model = DiskNet(conf, adj_matrix)
+    model = HGPN(conf, adj_matrix)
     print_model_summary(model)
 
     # Train
