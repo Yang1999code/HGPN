@@ -1,0 +1,8 @@
+torch
+omegaconf
+torchdiffeq
+mercator 
+sdeint
+scienceplots
+matplotlib
+scikit-learn
