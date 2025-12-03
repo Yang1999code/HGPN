@@ -9,6 +9,24 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.metrics import r2_score, mean_squared_error
 
+import os
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.init as init
+import torch.nn.functional as F
+from torch.optim.lr_scheduler import StepLR
+import mercator
+import matplotlib.pyplot as plt
+import sklearn.cluster as cluster
+import torchdiffeq as ode
+
+from utils import drawTraj, draw_embedding
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
 # 运行改进版的HindmarshRose, CoupledRossler  jia iF
 
 class GraphSAGE(nn.Module):
@@ -84,19 +102,7 @@ class FullAttention(nn.Module):
 
 
 
-import os
-import numpy as np
-import torch
-import torch.nn as nn
-import torch.nn.init as init
-import torch.nn.functional as F
-from torch.optim.lr_scheduler import StepLR
-import mercator
-import matplotlib.pyplot as plt
-import sklearn.cluster as cluster
-import torchdiffeq as ode
 
-from utils import drawTraj, draw_embedding
 
 
 def normalized_laplacian(A: torch.Tensor):
@@ -283,9 +289,7 @@ class WindowedAttention(nn.Module):
         x = x.view(B, D, -1)
         return x
 
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
+
 
 
 class FourierUnit(nn.Module):
@@ -370,9 +374,7 @@ class Freq_Fusion(nn.Module):
         return x
 
 
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
+
 
 
 class FFCM(nn.Module):
@@ -449,9 +451,7 @@ class FFCM(nn.Module):
 
         return x
 
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
+
 
 # FullAttention Implementation
 class FullAttention(nn.Module):
